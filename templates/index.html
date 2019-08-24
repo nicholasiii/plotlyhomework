@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belly Button Biodiversity</title>
+
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here" rel="stylesheet">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+
+
+    <div class="container" style="text-align:center; margin-top:50px">
+        <div class="jumbotron" style="background:#D1D6E7;">
+            <h1>Belly Button Biodiversity Interactive Dashboard</h1>
+            <p style="padding-top:10px;margin-bottom:0px">The creation of this interactive dasbhoard was inspired by a
+                <a href="http://robdunnlab.com/projects/belly-button-biodiversity/" style="font-weight:bold;">study</a> conducted in January 2011 to invesigate the microbes inhabiting our navels and the factors that
+                might influence the microscopic life calling this protected, moist patch of skin home.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <!-- Small button group -->
+                <h3><strong>Select sample:</strong></h3>
+                <div id="sampleList">
+                </div>
+
+                <div class="panel panel-default" style="margin-top:20px">
+                    <div class="panel-heading" style="background:#D1D6E7;text-align:center">
+                        <h3 class="panel-title">Sample MetaData</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <table class="table table-bordered">
+
+                            <tbody>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-5">
+                <h3><strong>Distribution of Microbes by Sample ID (Top 10)</strong></h3>
+                <div id="plotPie"></div>
+
+                <p style="font-size:0.75em">Lables are the Lowest taxonomic level of bacteria and archaea identified (‘phylotype’ or OTU, operational
+                    taxonomic unit) in the samples. Taxonomies reflect the lowest taxonomic level to which samples could
+                    be given a name. If samples were so different from existing samples as to not readily be classified they
+                    are simply labeled "bacteria" reflecting that they were different from everything we know. Taxonomies
+                    presented follow the taxonomic rank you learned about in Intro Biology: Kingdom (or Domain in the case
+                    of Archaea); Phylum; Subphylum; Order; Family; Genus. See Hulcr et al. 2012 for specific methods. Values
+                    indicate sequencing read numbers. </p>
+            </div>
+
+            <div class="col-md-4">
+                <h3><strong>Washing Frequency (belly button scrubs per week)</strong></h3>
+                <div id="plotGauge"></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-12">
+                        <h3><strong>Relationship between OTU ID and Sample Values</strong></h3>
+                    <div id="plotBubble"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <!-- plotly.js cdn -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script src="{{url_for('static',filename='js/app.js')}}"></script>
+
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+
+</body>
+
+</html>
